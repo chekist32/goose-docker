@@ -10,7 +10,7 @@ services:
       POSTGRES_PASSWORD: postgres
     # To be sure to run migrations only when postgres is ready to receive connections
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres -d goipay_db"]
+      test: ["CMD-SHELL", "pg_isready -U postgres -d test"]
       interval: 10s
       timeout: 5s
       retries: 5
