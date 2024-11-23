@@ -50,7 +50,6 @@ jobs:
         with:
           images: |
             chekist32/${{ env.IMAGE_NAME }}
-            git.uncleched.com/chekist32/${{ env.IMAGE_NAME }}
           tags: |
             type=raw,value=latest,enabled=${{ github.ref == 'refs/heads/main' }}
             type=ref,event=tag,pattern=v*
