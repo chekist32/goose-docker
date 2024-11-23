@@ -1,5 +1,4 @@
 FROM alpine:3
-MAINTAINER kukymbr
 LABEL description="goose migrations in docker"
 
 ENV GOOSE_VERSION_TAG="v3.22.1"
@@ -8,7 +7,7 @@ RUN apk update && \
     apk upgrade && \
     rm -rf /var/cache/apk/*
 
-ARG TARGETARCH=amd64
+ARG TARGETARCH
 RUN case "$TARGETARCH" in \
       "amd64") GOOSE_ARCH="x86_64";; \
       "arm64") GOOSE_ARCH="arm64";; \
