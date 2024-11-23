@@ -40,7 +40,8 @@ services:
   # Add the service, which depends on migration data,
   # with a `service_completed_successfully` condition to be sure data is successfully migrated.
   #
-  # my_app:
-  #  depends_on:
-  #    migrations:
-  #      condition: service_completed_successfully
+  my_app:
+    image: busybox:stable
+    depends_on:
+      migrations:
+        condition: service_completed_successfully
