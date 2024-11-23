@@ -42,6 +42,7 @@ services:
   #
   my_app:
     image: busybox:stable
+    restart: no
     depends_on:
       migrations:
         condition: service_completed_successfully
