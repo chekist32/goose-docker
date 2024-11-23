@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - 'main'  
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Test Docker Compose
+        run: |
+          docker compose up -d
+          docker compose down
